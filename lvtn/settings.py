@@ -77,7 +77,10 @@ WSGI_APPLICATION = 'lvtn.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'lvtn_db',
+        'USER': 'postgres',
+        'PASSWORD': 'Kodcyeu1ai',
+        'HOST': 'localhost',
     }
 }
 
@@ -121,6 +124,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'lvtn/static'),
 ]
+
+# Media settings
+# MEDIA_URL = 'media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
