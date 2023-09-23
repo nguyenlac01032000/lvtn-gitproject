@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from contacts import views as contact_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pages.urls')),
     path('meds/', include('meds.urls')),
     path('contacts/', include('contacts.urls')),
+    path('contact/', contact_views.contact_view, name='contact'),
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

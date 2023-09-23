@@ -17,32 +17,20 @@
                             Home
                         </a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="cars.html">
-                            Cars
-                        </a>
-                    </li> -->
+                    <!-- Full Page Search -->
 
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="/carhouse/about.html">
-                            About
-                        </a>
-                    </li> -->
-
-                     <!-- <li class="nav-item">
-                        <a class="nav-link" href="services.html">
-                            Services
-                        </a>
-                    </li> -->
-
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li> -->
-                    <li class="nav-item dropdown m-hide">
-                        <a href="#full-page-search" class="nav-link h-icon">
-                            <i class="fa fa-search"></i>
-                        </a>
-                    </li>
+                        <li class="nav-item dropdown m-hide">
+                            <a href="#full-page-search" class="nav-link h-icon">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                        <div id="full-page-search">
+                            <button type="button" class="open">×</button>
+                            <form action="{% url 'search' %}" class="search-header">
+                                <input type="search" value="" placeholder="từ khóa liên quan đến vấn đề bạn cần tìm", name='keyword' />
+                                <button type="submit" class="btn btn-sm button-theme">Search</button>
+                            </form>
+                        </div>
 
                 </ul>
             </div>

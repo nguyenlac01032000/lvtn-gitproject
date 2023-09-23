@@ -29,13 +29,24 @@ def med_detail(request, id):
 
 def search(request):
     meds = Med.objects.order_by('-created_date')
-    search_fields = Med.objects.values('brand', 'model', 'problem',)
+    # search_fields = Med.objects.values('brand', 'model', 'problem',)
     if 'keyword' in request.GET:
         keyword = request.GET['keyword']
         if keyword:
             meds = meds.filter(problem__icontains=keyword)
+
+    if 'model' in request.GET:
+        model = request.GET['model']
+        if model:
+            meds = meds.filter(model__iexact=model)
+
+    if 'brand' in request.GET:
+        brand = request.GET['brand']
+        if brand:
+            meds = meds.filter(brand__iexact=brand)
+
     data = {
         'meds': meds,
-        'search_fields':search_fields,
+        # 'search_fields':search_fields,
     }
     return render(request, 'meds/search.html', data)

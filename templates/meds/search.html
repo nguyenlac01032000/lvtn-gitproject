@@ -34,66 +34,63 @@
               {% for med in meds %}
                 <div class="slick-slide-item">
                     <div class="car-box-3">
-
                         <div class="car-thumbnail">
-                            <a href="car-details.html" class="car-img">
-                                <!-- <div class="tag-2">{{ med.brand }}</div>  -->
-                                <!-- <div class="price-box">
-                                    <span class="del"><del>$805.00</del></span>
-                                    <br>
-                                    <span>$780.00</span>
-                                </div> -->
-                                <!-- <img class="d-block w-100" src="img/car/car-1.jpg" alt="car"> --> -->
-                            </a>
                             <div class="carbox-overlap-wrapper">
                                 <div class="overlap-box">
                                     <div class="overlap-btns-area">
-                                        <!-- <div class="car-magnify-gallery">
-                                            <a href="img/car/car-1.jpg" class="overlap-btn">
-                                                <i class="fa fa-expand"></i>
-                                                <img class="hidden" src="img/car/car-1.jpg">
-                                            </a>
-                                            <a href="img/car/car-2.jpg" class="hidden">
-                                                <img class="hidden" src="img/car/car-2.jpg">
-                                            </a>
-                                            <a href="img/car/car-3.jpg" class="hidden">
-                                                <img class="hidden" src="img/car/car-3.jpg">
-                                            </a>
-                                            <a href="img/car/car-4.jpg" class="hidden">
-                                                <img class="hidden" src="img/car/car-4.jpg">
-                                            </a>
-                                            <a href="img/car/car-5.jpg" class="hidden">
-                                                <img class="hidden" src="img/car/car-5.jpg">
-                                            </a>
-                                        </div> -->
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                         <div class="detail">
                             <h1 class="title">
                                 <a href="{% url 'med_detail' med.id %}">{{ med.model }}</a>
                             </h1>
                             <div class="location">
-                                <a href="car-details.html">
+                                <a href="{% url 'med_detail' med.id %}">
                                   <h6>{{ med.problem }}</h6>
                                     <!-- <i class="flaticon-pin"></i>{{ med.problem }} -->
                                 </a>
                             </div>
-                            <!-- <ul class="facilities-list clearfix">
-                                <li>Petrol</li>
-                                <li>4,000 km</li>
-                                <li>Manual</li>
-                                <li>Sport</li>
-                                <li>white</li>
-                                <li>2020</li>
-                            </ul> -->
                         </div>
                     </div>
                 </div>
               {% endfor %}
             </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="sidebar-right">
+                    <!-- Advanced search start -->
+                    <div class="widget advanced-search d-none-992">
+                        <form action="{% url 'contact' %}">
+                          <button  class="btn btn-outline-danger bomd btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal"> Send message</button>
+                        </form>
+                    </div>
+
+                    <!-- Question start -->
+                    <div class="widget question">
+                        <h5 class="sidebar-title">Nếu không tìm được kết quả phù hợp - hãy liên hệ với chúng tôi </h5>
+                        <ul class="contact-info">
+                            <li>
+                                <i class="flaticon-pin"></i>Khoa Khoa Học Ứng Dụng, Đại Học Bách Khoa - ĐHQG TPHCM
+                            </li>
+                            <li>
+                                <i class="flaticon-mail"></i><a href="mailto:nguyenlac1301@gmail.com">nguyenlac1301@gmail.com</a>
+                            </li>
+                            <li>
+                                <i class="flaticon-phone"></i><a href="tel:0945 563 650">0945 563 659</a>
+                            </li>
+                        </ul>
+                        <div class="social-list clearfix">
+                            <ul>
+                                <li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#" class="rss-bg"><i class="fa fa-rss"></i></a></li>
+                                <li><a href="#" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             <div class="slick-btn">
                 <div class="slick-prev slick-arrow-buton sab-4">
                     <i class="fa fa-angle-left"></i>
@@ -104,7 +101,10 @@
             </div>
         </div>
     </div>
-</div>
+
+    </div>
 <!-- Featured car end -->
+
+
 
 {% endblock %}

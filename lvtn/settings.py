@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,7 +36,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'meds.apps.MedsConfig',
     'pages.apps.PagesConfig',
-    'contacts.apps.ContactsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
+    'contacts',
 ]
 
 MIDDLEWARE = [
@@ -136,4 +139,18 @@ STATICFILES_DIRS = [
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# DEFAULT_FROM_EMAIL = 'nguyenlac1301@gmail.com'
+
+CONTACT_EMAIL = 'thanhtuyena12cmg@gmail.com'
+ADMIN_EMAIL = ['nguyenlac1301@gmail.com', ]
+
+
+# Twilio SendGrid
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'nguyenlac1301@gmail.com'
+EMAIL_HOST_PASSWORD = 'ifsfgbuhqyfsdrvn'#os.environ.get('SENDGRID_API_KEY')
+# EMAIL_HOST_PASSWORD = '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'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

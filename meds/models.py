@@ -12,13 +12,14 @@ class Med(models.Model):
         ('Siemens', 'Siemens'),
         ('Toshiba', 'Toshiba'),
         ('Aloka', 'Aloka'),
+        ('Khác','Khác'),
     )
 
     brand = models.CharField(choices=brand_choice, max_length=255)
     model = models.CharField(max_length=255)
     problem = models.CharField(max_length=1000)
     reason = models.CharField(max_length=1000)
-    fixproblem = RichTextField()
+    fixproblem = models.CharField(max_length=3000)
     created_date = models.DateTimeField(default=datetime.now, blank=True)
     is_featured = models.BooleanField(default=False)
 

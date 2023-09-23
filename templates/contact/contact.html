@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
+
+<!-- Sub banner start -->
+<div class="sub-banner overview-bgi">
+    <img class="d-block w-100 h-50" src="{% static 'img/background.jpg' %}" alt="banner">
+    <h1>GỬI YÊU CẦU CHO CHÚNG TÔI</h1>
+</div>
+<!-- Sub Banner end -->
+
+
+<!-- <div class="cf" href="{% static 'contact/contact.css' %}" > -->
+  <form action="" method="post"  class="contact" >
+      {% csrf_token %}
+      {{ form }}
+      <input type="submit" value="Submit">
+  </form>
+</div>
+
+{% endblock %}
